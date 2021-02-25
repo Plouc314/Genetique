@@ -1,10 +1,8 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from gui import Ui_MainWindow
+from gui import HomeWindow
 
 app = QtWidgets.QApplication(sys.argv)
-MainWindow = QtWidgets.QMainWindow()
-ui = Ui_MainWindow()
-ui.setupUi(MainWindow)
-MainWindow.show()
+home = HomeWindow()
+home.show()
 sys.exit(app.exec_())
