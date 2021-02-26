@@ -122,8 +122,8 @@ class HomeWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         start = f'{adn.strand1.start}{_s*3}{adn.strand2.start}'
         end = f'{adn.strand1.end}{_s*3}{adn.strand2.end}'
 
-        start = bio.get_c(start, "#243160") # same blue as in QLabel
-        end = bio.get_c(end, "#243160") # same blue as in QLabel
+        start = bio.get_c(start, "grey")
+        end = bio.get_c(end, "grey")
 
         lines.insert(0, start)
         lines.append(end)
@@ -139,8 +139,8 @@ class HomeWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         lines = list(str(brin))
 
         # add directions
-        start = bio.get_c(brin.start, "#243160") # same blue as in QLabel
-        end = bio.get_c(brin.end, "#243160") # same blue as in QLabel
+        start = bio.get_c(brin.start, "grey")
+        end = bio.get_c(brin.end, "grey")
 
         lines = [start] + lines + [end]
         lines = self._format_lines(lines=lines)
@@ -158,8 +158,8 @@ class HomeWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             arn.append(' '.join(line[-2:]))
 
         # add directions
-        start = bio.get_c(ribose.start, "#243160") # same blue as in QLabel
-        end = bio.get_c(ribose.end, "#243160") # same blue as in QLabel
+        start = bio.get_c(ribose.start, "grey")
+        end = bio.get_c(ribose.end, "grey")
         
         arn = [start] + arn + [end]
         names = [''] + names + ['']
@@ -182,8 +182,8 @@ class HomeWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         start = f'{adn.strand2.start}{_s*3}{adn.strand1.start}{_s*3}{adn.strand2.start}{_s*3}{adn.strand1.start}'
         end = f'{adn.strand2.end}{_s*3}{adn.strand1.end}{_s*3}{adn.strand2.end}{_s*3}{adn.strand1.end}'
         
-        start = bio.get_c(start, "#243160") # same blue as in QLabel
-        end = bio.get_c(end, "#243160") # same blue as in QLabel
+        start = bio.get_c(start, "grey")
+        end = bio.get_c(end, "grey")
 
         center.insert(0, start)
         center.append(end)

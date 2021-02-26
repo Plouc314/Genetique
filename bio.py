@@ -132,7 +132,6 @@ names = {
     "STOP": "STOP",
 }
 
-
 if __name__ == '__main__':
 
     # for terminal
@@ -158,6 +157,16 @@ else:
         '''
         Return the given in string in the given color.
         '''
+
+        colors = {
+            "grey": "#243160",
+            "blue": "#db39b3",
+            "orange": "#a17a1a",
+            "red": "#d43737"
+        }
+
+        if color in colors.keys():
+            color = colors[color]
 
         if color in ['bold', 'dark']:
             return f'<font color="black">{string}</font>'
