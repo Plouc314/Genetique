@@ -13,6 +13,8 @@ class HomeWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.button_exec.clicked.connect(self.execute)
         self.actionPlouc314.triggered.connect(self.open_github)
         self.actionGoumaz.triggered.connect(self.open_wiki)
+        self.button_zoom_in.clicked.connect(self.zoom_in)
+        self.button_zoom_out.clicked.connect(self.zoom_out)
 
     def open_github(self):
         link = "https://github.com/Plouc314"
@@ -26,13 +28,25 @@ class HomeWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if not QtGui.QDesktopServices.openUrl(url):
             QtGui.QMessageBox.warning(self, 'Open Url', 'Could not open url')
 
+    def zoom_in(self):
+        for text in (self.text_center, self.text_left, self.text_right):
+            font = text.font()
+            font.setPointSize(font.pointSize() + 2)
+            text.setFont(font)
+
+    def zoom_out(self):
+        for text in (self.text_center, self.text_left, self.text_right):
+            font = text.font()
+            font.setPointSize(font.pointSize() - 2)
+            text.setFont(font)
+
     def reset(self):
         self.text_left.setText('')
         self.text_center.setText('')
         self.text_right.setText('')
 
     def execute(self):
-
+        
         self.reset()
 
         input_string = self.textEdit_genome.toPlainText()
