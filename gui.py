@@ -23,7 +23,7 @@ class HomeWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             QtGui.QMessageBox.warning(self, 'Open Url', 'Could not open url')
 
     def open_wiki(self):
-        link = "https://en.wikipedia.org/wiki/Sweden"
+        link = "https://www.goumaz-immobilier.ch/fr"
         url = QtCore.QUrl(link)
         if not QtGui.QDesktopServices.openUrl(url):
             QtGui.QMessageBox.warning(self, 'Open Url', 'Could not open url')
